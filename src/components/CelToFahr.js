@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CountUp from 'react-countup';
-import './CelToFahr.css';
 
 class CeltoFahr extends Component {
     state = {
@@ -8,12 +7,7 @@ class CeltoFahr extends Component {
     }
 
     switchCel = () => {
-        this.setState({ celOn: !this.state.celOn });
 
-       //Here below in console.log I get the 'M' and 'I' both units
-       //but, I want to set the state of 'M' when celOn is true
-       // and 'I' when its false
-        console.log('STATE', this.props.unit)
       };
 
     render() {
@@ -33,7 +27,7 @@ class CeltoFahr extends Component {
                     </div>
                 </div>
             </div>
-                {/*End of Code for celcius to farenheit */}
+          
             </React.Fragment>
         )
     }

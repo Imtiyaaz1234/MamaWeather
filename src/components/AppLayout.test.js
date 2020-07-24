@@ -1,7 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import AppLayout from "./AppLayout";
-import { mockCurrentWeather, mockForecast } from "../__mocks__/Weather.mock";
 import "@testing-library/jest-dom/extend-expect";
 
 describe("<AppLayout />", () => {
@@ -12,7 +11,7 @@ describe("<AppLayout />", () => {
       forecast: mockForecast,
       icon: "wi wi-day-cloudy-gusts",
       recommendation:
-        "Great day for a bit of laundry and maybe a nice picnic date later :)"
+        "Great day for a bit of laundry."
     };
   });
 
@@ -26,9 +25,9 @@ describe("<AppLayout />", () => {
       />
     );
 
-    await screen.findByText("Eldoret, KE");
+    await screen.findByText("Cape Town, ZA");
 
-    expect(screen.getByText("Eldoret, KE")).toBeInTheDocument();
+  
     expect(
       screen.getByText("Wednesday, 10:36 AM, Few Clouds")
     ).toBeInTheDocument();
