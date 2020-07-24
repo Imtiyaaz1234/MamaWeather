@@ -94,7 +94,6 @@ export default function AppLayout(props) {
   const classes = useStyles();
   const { currentWeather, forecast, icon, recommendation, styleContainer } = props;
   const celcius = Math.round(currentWeather.temperature);
-  console.log(celcius);
 
   let showPopup;
 
@@ -102,6 +101,7 @@ export default function AppLayout(props) {
   let cel;
   let far;
 
+ //Tried a new theory for conversation - was a failure
   function cel_to_fah (celcius) {
       return (celcius * 9 / 5) + 32
   }

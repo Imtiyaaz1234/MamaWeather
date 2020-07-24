@@ -6,13 +6,10 @@ import Weather from "./Weather";
 
 
 export default function App() {
-
-
   const [city, setCity] = useState("Cape Town");
   const [error, setError] = useState(null);
   const [currentWeather, setCurrentWeather] = useState({});
   const [forecast, setForecast] = useState([]);
-
 
   useEffect(() => {
     getWeather(city)
@@ -35,6 +32,35 @@ export default function App() {
         setError(err.message);
       });
   }, [city, error]);
+
+  useEffect(() => {
+  const interval = setInterval(() => {
+    getWeather(city)
+      .then(weather => {
+        setCurrentWeather(weather);
+        setError(null);
+      })
+      .catch(err => {
+        setError(err.message);
+      });
+  }, 20000);
+  return () => clearInterval(interval);
+ }, []);
+
+
+  useEffect(() => {
+  const interval = setInterval(() => {
+    getForecast(city)
+      .then(data => {
+        setForecast(data);
+        setError(null);
+      })
+      .catch(err => {
+        setError(err.message);
+      });
+  }, 20000);
+  return () => clearInterval(interval);
+}, []);
 
   const handleCityChange = city => {
     setCity(city);
@@ -146,7 +172,6 @@ function mapDataToWeatherInterface(data) {
     condition: data.cod
   };
 
-  console.log(mapped);
 
   // Add extra properties for the five day forecast: dt_txt, icon, min, max
   if (data.dt_txt) {

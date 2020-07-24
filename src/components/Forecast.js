@@ -21,7 +21,6 @@ export default function Forecast(props) {
   const classes = useStyles();
   const prefix = "wi wi-";
   const { forecast } = props;
-  console.log(forecast);
   const result = forecast.map((item, index) => {
     const icon = prefix + weatherIcons.default[item.icon_id].icon;
     return (
