@@ -2,6 +2,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+Create a .env.local file
+add the following
+=================================================
+REACT_APP_API_URL = 'https://api.openweathermap.org/data/2.5'
+REACT_APP_API_KEY = 'ec055048e83abc17dcb32a10a2cffb81'
+REACT_APP_ICON_URL = 'https://openweathermap.org/img/w'
+
+
 In the project directory, you can run:
 
 ### `yarn start`
