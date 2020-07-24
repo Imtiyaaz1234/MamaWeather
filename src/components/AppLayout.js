@@ -95,7 +95,6 @@ export default function AppLayout(props) {
   const { currentWeather, forecast, icon, recommendation, styleContainer } = props;
   const celcius = Math.round(currentWeather.temperature);
 
-  let showPopup;
 
   let scale = document.querySelector('.scale');
   let cel;
